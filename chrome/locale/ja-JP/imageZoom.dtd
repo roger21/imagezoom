@@ -1,5 +1,5 @@
-<!ENTITY iz.product.name "Image Zoom">
-<!ENTITY iz.product.version "0.4">
+<!ENTITY iz.product.name "Image Zoom (ugly fixes)">
+<!ENTITY iz.product.version "0.1.0">
 <!ENTITY iz.about.version.label "バージョン">
 <!ENTITY iz.about.createdby.label "作成者">
 <!ENTITY iz.about.help.label "ヘルプ (英語)">

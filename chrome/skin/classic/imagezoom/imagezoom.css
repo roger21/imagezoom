@@ -1,8 +1,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 /* ***** BEGIN LICENSE BLOCK *****
-       
-    Copyright (c) 2004-2010  Jason Adams <imagezoom@yellowgorilla.net>
-     
+
+    Copyright (c) 2006-2016  Jason Adams <imagezoom@yellowgorilla.net>
+
     This file is part of Image Zoom.
 
     Image Zoom is free software; you can redistribute it and/or modify
@@ -22,29 +22,29 @@
 ***** END LICENSE BLOCK ***** */
 
 #mainmenu {
-  	border: 2px solid;
-  	-moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
-  	-moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
-  	-moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
-  	-moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
-  	padding: 1px;
-  	min-width: 1px;
-  	background-color: Menu;
-	-moz-box-orient: vertical;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
+  padding: 1px;
+  min-width: 1px;
+  background-color: Menu;
+  -moz-box-orient: vertical;
 }
 
 #submenu, #subrotatemenu {
-  	border: 2px solid;
-  	-moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
-  	-moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
-  	-moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
-  	-moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
-  	padding: 1px;
-  	min-width: 1px;
-  	background-color: Menu;
-	-moz-box-orient: vertical;
-	margin-top: 2px;
-	margin-left: -2px;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
+  padding: 1px;
+  min-width: 1px;
+  background-color: Menu;
+  -moz-box-orient: vertical;
+  margin-top: 2px;
+  margin-left: -2px;
 }
 
 checkbox {
@@ -56,9 +56,9 @@ checkbox {
 }
 
 .dummy {
-	margin-left:4px;
-	margin-right:2px;
-	opacity:1;
+  margin-left:4px;
+  margin-right:2px;
+  opacity:1;
 }
 
 .right-arrow {
@@ -77,14 +77,14 @@ checkbox {
 
 .help {
   text-align: right;
- }
+}
 
 .main-title {
   font-size: x-large;
   cursor: pointer;
   color: grey;
   font-weight: bold;
-  -moz-user-focus: normal;  
+  -moz-user-focus: normal;
 }
 
 .sub-title {
@@ -132,4 +132,3 @@ checkbox {
 #install-notice {
   font-size: small;
 }
-

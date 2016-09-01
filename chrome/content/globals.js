@@ -1,6 +1,6 @@
 /* ***** BEGIN LICENSE BLOCK *****
 
- Copyright (c) 2006-2010  Jason Adams <imagezoom@yellowgorilla.net>
+ Copyright (c) 2006-2016  Jason Adams <imagezoom@yellowgorilla.net>
 
  This file is part of Image Zoom.
 
@@ -20,11 +20,12 @@
 
  * ***** END LICENSE BLOCK ***** */
 
-if (!net) var net = {};
-if (!net.yellowgorilla) net.yellowgorilla = {};
-if (!net.yellowgorilla.imagezoom) net.yellowgorilla.imagezoom = {};
+if (!image) var image = {};
+if (!image.zoom) image.zoom = {};
+if (!image.zoom.ugly) image.zoom.ugly = {};
+if (!image.zoom.ugly.attempt) image.zoom.ugly.attempt = {};
 
-net.yellowgorilla.imagezoom.globals = new ImageZoomGlobals();
+image.zoom.ugly.attempt.globals = new ImageZoomGlobals();
 
 function ImageZoomGlobals() {
 
@@ -35,7 +36,7 @@ function ImageZoomGlobals() {
   self.AppName = "";
   self.AppVersion = "0.0.0";
 
-  self.AppID = "{1A2D0EC4-75F5-4c91-89C4-3656F6E44B68}";
+  self.AppID = "image_zoom_ugly_attempt@roger21.free.fr";
   Components.utils.import("resource://gre/modules/AddonManager.jsm");
 
 
@@ -55,7 +56,7 @@ function ImageZoomGlobals() {
         // try to save the prefs
         nsIPrefServiceObj.savePrefFile(null);
         setTimeout(function () {
-          var url = "http://imagezoom.yellowgorilla.net/install/?source=install&version=" + version;
+          var url = "http://imagezoom.yellowgorilla.net/install/?source=install";
           var tabmail = document.getElementById("tabmail");
           if (isThunderbird()){
             if (!tabmail) {

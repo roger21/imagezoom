@@ -1,6 +1,6 @@
 /* ***** BEGIN LICENSE BLOCK *****
 
- Copyright (c) 2006-2013  Jason Adams <imagezoom@yellowgorilla.net>
+ Copyright (c) 2006-2016  Jason Adams <imagezoom@yellowgorilla.net>
 
  This file is part of Image Zoom.
 
@@ -22,13 +22,14 @@
 
 
 // Initialize the global namespace for image zoom
-if (!net) { var net = {}; }
-if (!net.yellowgorilla) { net.yellowgorilla = {}; }
-if (!net.yellowgorilla.imagezoom) { net.yellowgorilla.imagezoom = {}; }
+if (!image) var image = {};
+if (!image.zoom) image.zoom = {};
+if (!image.zoom.ugly) image.zoom.ugly = {};
+if (!image.zoom.ugly.attempt) image.zoom.ugly.attempt = {};
 
-net.yellowgorilla.imagezoom.overlay = new ImageZoomOverlay();
+image.zoom.ugly.attempt.overlay = new ImageZoomOverlay();
 
-window.addEventListener("load", net.yellowgorilla.imagezoom.overlay.initImageZoom, false);
+window.addEventListener("load", image.zoom.ugly.attempt.overlay.initImageZoom, false);
 
 // Image Zoom overlay Object Definition
 function ImageZoomOverlay() {
@@ -60,21 +61,21 @@ function ImageZoomOverlay() {
     // Add events for the mouse functions
     gPanelContainer().addEventListener("mousedown", izOnMouseDown, true);
 
-    imagezoomBundle = document.getElementById("net.yellowgorilla.imagezoom.stringbundle");
+    imagezoomBundle = document.getElementById("image.zoom.ugly.attempt.stringbundle");
 
   };
 
   this.izShowCustomZoom = function () {
     // Create the image object and pass it to the custom zoom dialog
     var oizImage = new IzImage(document.popupNode);
-    openDialog("chrome://net.yellowgorilla.imagezoom/content/customzoom.xul", "", "chrome,modal,centerscreen", "Image", oizImage);
+    openDialog("chrome://image.zoom.ugly.attempt/content/customzoom.xul", "", "chrome,modal,centerscreen", "Image", oizImage);
     reportStatus(oizImage);
   };
 
   this.izShowCustomDim = function () {
     // Create the image object and pass it to the custom dimension dialog
     var oizImage = new IzImage(document.popupNode);
-    openDialog("chrome://net.yellowgorilla.imagezoom/content/customdim.xul", "", "chrome,modal,centerscreen", oizImage);
+    openDialog("chrome://image.zoom.ugly.attempt/content/customdim.xul", "", "chrome,modal,centerscreen", oizImage);
     reportStatus(oizImage);
   };
 
@@ -158,10 +159,10 @@ function ImageZoomOverlay() {
     //return document.getElementById("content");
     return window;
   }
-  
+
   function izContentVariables() {
-    if (!content.document.guid1A2D0EC475F54c9189C43656F6E44B68) content.document.guid1A2D0EC475F54c9189C43656F6E44B68 = {};
-    return content.document.guid1A2D0EC475F54c9189C43656F6E44B68;
+    if (!content.document.image_zoom_ugly_attempt) content.document.image_zoom_ugly_attempt = {};
+    return content.document.image_zoom_ugly_attempt;
   }
 
   function cancelScrollZoom() {
@@ -408,7 +409,7 @@ function ImageZoomOverlay() {
     optionItems = new Array("mmZoomIO", "mmZoomIO", "mmReset", "mmCustomZoom", "mmCustomDim", "mmFitWindow", "mmFitWidth", "mmRotateRight", "mmRotateLeft", "mmRotate180", "mmRotateReset", "smZoomIO", "smZoomIO", "smReset", "smRotateRight", "smRotateLeft", "smRotate180", "smRotateReset", "smCustomZoom", "smCustomDim", "smFitWindow", "smFitWidth", "smZoomPcts", "smZoomPcts", "smZoomPcts", "smZoomPcts", "smZoomPcts", "smZoomPcts", "smZoomPcts", "smZoomPcts", "smZoomPcts");
 
     if (gContextMenu.onImage || gContextMenu.onCanvas) {
-      oizImage = new IzImage(document.popupNode);
+      oizImage = new IzImage(document.popupNode, true);
     }
 
     // Display the correct menu items depending on options and whether an image was clicked
@@ -442,7 +443,7 @@ function ImageZoomOverlay() {
     } else document.getElementById("context-rotatesub").hidden = true;
   }
 
-  function IzImage(oImage) {
+  function IzImage(oImage, dontStyleYet) {
     var pImage = oImage;
     var enabled = false;
 
@@ -460,8 +461,10 @@ function ImageZoomOverlay() {
           pImage.originalWidthUnit = "px";
           pImage.originalHeight = pImage.height;
           pImage.originalHeightUnit = "px";
-          pImage.style.width = pImage.originalWidth + pImage.originalWidthUnit;
-          pImage.style.height = pImage.originalHeight + pImage.originalHeightUnit;
+          if(!(dontStyleYet === true)){
+            pImage.style.width = pImage.originalWidth + pImage.originalWidthUnit;
+            pImage.style.height = pImage.originalHeight + pImage.originalHeightUnit;
+          }
         } else {
           if (pImage.style.width) {
             // Remember the original width settings
@@ -533,20 +536,25 @@ function ImageZoomOverlay() {
     // Zoom to a factor of the current image size
     function zoom(factor) {
       if (enabled) {
-
         pImage.zoomFactor = pImage.zoomFactor * factor;
         pImage.autoFitBefore = 0;
+        pImage.style.marginTop="";
         // Zoom the width style if it exists
         if (pImage.style.width) {
           var origWidth = getDimInt(pImage.style.width);
           pImage.style.width = (origWidth * factor) + getDimUnit(pImage.style.width);
         }
-
         // Zoom the height style if it exists
         if (pImage.style.height) {
           var origHeight = getDimInt(pImage.style.height);
           pImage.style.height = (origHeight * factor) + getDimUnit(pImage.style.height);
-
+        }
+        pImage.style.maxWidth = "none";
+        pImage.style.maxHeight = "none";
+        if(pImage.y < 0 || pImage.offsetTop < 0){
+          pImage.style.marginTop="0";
+        } else {
+          pImage.style.marginTop="";
         }
       }
     }
@@ -721,6 +729,7 @@ function ImageZoomOverlay() {
     }
 
     function pZoomAbs() {
+      pImage.style.marginTop="";
       // only set the width style if it was originally set
       if (pImage.originalWidth) {
         pImage.style.width = (pImage.originalWidth * (pImage.zoomFactor / 100)) + pImage.originalWidthUnit;
@@ -732,6 +741,13 @@ function ImageZoomOverlay() {
         pImage.style.height = (pImage.originalHeight * (pImage.zoomFactor / 100)) + pImage.originalHeightUnit;
       } else {
         pImage.style.height = "";
+      }
+      pImage.style.maxWidth = "none";
+      pImage.style.maxHeight = "none";
+      if(pImage.y < 0 || pImage.offsetTop < 0){
+        pImage.style.marginTop="0";
+      } else {
+        pImage.style.marginTop="";
       }
     }
 

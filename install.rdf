@@ -1,43 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-
   <Description about="urn:mozilla:install-manifest">
-
-    <em:id>{1A2D0EC4-75F5-4c91-89C4-3656F6E44B68}</em:id>
-    <em:name>Image Zoom</em:name>
-    <em:version>0.6.3</em:version>
+    <em:id>image_zoom_ugly_attempt@roger21.free.fr</em:id>
+    <em:name>Image Zoom (ugly fixes)</em:name>
+    <em:version>0.1.0</em:version>
     <em:type>2</em:type>
-    <em:description>Adds zoom functionality for images</em:description>
+    <em:description>An ugly attempt at fixing Image Zoom</em:description>
     <em:creator>Jason Adams</em:creator>
-    <em:homepageURL>http://imagezoom.yellowgorilla.net/</em:homepageURL>
-    <em:optionsURL>chrome://net.yellowgorilla.imagezoom/content/options.xul</em:optionsURL>
-    <em:iconURL>chrome://net.yellowgorilla.imagezoom/skin/imagezoom.png</em:iconURL>
-    <em:aboutURL>chrome://net.yellowgorilla.imagezoom/content/about.xul</em:aboutURL>
-
+    <em:developer>roger21</em:developer>
+    <em:optionsURL>chrome://image.zoom.ugly.attempt/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://image.zoom.ugly.attempt/skin/imagezoom.png</em:iconURL>
+    <em:aboutURL>chrome://image.zoom.ugly.attempt/content/about.xul</em:aboutURL>
     <!-- Firefox -->
     <em:targetApplication>
      <Description>
        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
        <em:minVersion>17.0</em:minVersion>
-       <em:maxVersion>21.*</em:maxVersion>
+       <em:maxVersion>51.0</em:maxVersion>
      </Description>
     </em:targetApplication>
-
     <!-- Thunderbird -->
     <em:targetApplication>
       <Description>
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
         <em:minVersion>17.0</em:minVersion>
-        <em:maxVersion>18.*</em:maxVersion>
+        <em:maxVersion>51.0</em:maxVersion>
       </Description>
     </em:targetApplication>
-  <!-- SeaMonkey -->
+    <!-- SeaMonkey -->
     <em:targetApplication>
-  	  <Description>
+      <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
         <em:minVersion>2.16</em:minVersion>
-        <em:maxVersion>2.17.*</em:maxVersion>
+        <em:maxVersion>2.48</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
 </RDF>
-

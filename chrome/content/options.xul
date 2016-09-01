@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- ***** BEGIN LICENSE BLOCK *****
 
-    Copyright (c) 2006-2013  Jason Adams <imagezoom@yellowgorilla.net>
+    Copyright (c) 2006-2016  Jason Adams <imagezoom@yellowgorilla.net>
 
     This file is part of Image Zoom.
 
@@ -22,10 +22,10 @@
 ***** END LICENSE BLOCK ***** -->
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://net.yellowgorilla.imagezoom/skin/imagezoom.css" type="text/css"?>
+<?xml-stylesheet href="chrome://image.zoom.ugly.attempt/skin/imagezoom.css" type="text/css"?>
 <?xml-stylesheet href="chrome://mozapps/skin/pref/pref.css" type="text/css"?>
 
-<!DOCTYPE window SYSTEM "chrome://net.yellowgorilla.imagezoom/locale/imageZoom.dtd">
+<!DOCTYPE window SYSTEM "chrome://image.zoom.ugly.attempt/locale/imageZoom.dtd">
 
 <dialog buttons="accept, cancel"
         id="imagezoom-options-dialog"
@@ -34,12 +34,12 @@
         title="&iz.product.name; &iz.options.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <script type="application/x-javascript" src="chrome://net.yellowgorilla.imagezoom/content/globals.js"/>
-    <script type="application/x-javascript" src="chrome://net.yellowgorilla.imagezoom/content/options.js"/>
+    <script type="application/x-javascript" src="chrome://image.zoom.ugly.attempt/content/globals.js"/>
+    <script type="application/x-javascript" src="chrome://image.zoom.ugly.attempt/content/options.js"/>
 
 
     <stringbundleset id="stringbundleset">
-        <stringbundle id="bundle_ImageZoom" src="chrome://net.yellowgorilla.imagezoom/locale/imageZoom.properties"/>
+        <stringbundle id="bundle_ImageZoom" src="chrome://image.zoom.ugly.attempt/locale/imageZoom.properties"/>
     </stringbundleset>
 
     <tabbox id="wf_tabbox">
@@ -52,7 +52,7 @@
             <tabpanel orient="vertical" flex="1">
                 <vbox flex="1">
                     <label id="visitHome" class="url help" value="&iz.options.help.label;"
-                           onclick="net.yellowgorilla.imagezoom.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=options&amp;version=' + net.yellowgorilla.imagezoom.globals.getAppVersion());"/>
+                           onclick="image.zoom.ugly.attempt.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=options');"/>
                     <groupbox align="start">
                         <caption>
                             <checkbox id="imagezoomusemouseoptions" label="&iz.options.usemouse.label;"
@@ -243,7 +243,7 @@
                 <hbox>
                     <spacer flex="1"/>
                     <label id="visitHome" class="url help" value="&iz.options.help.label;"
-                           onclick="net.yellowgorilla.imagezoom.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=options&amp;version=&iz.product.version;');"/>
+                           onclick="image.zoom.ugly.attempt.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=options');"/>
                 </hbox>
                 <groupbox id="container" orient="horizontal" flex="1">
                     <caption label="&iz.options.contextdisplay.label;"/>
@@ -412,7 +412,7 @@
                 <hbox>
                     <spacer flex="1"/>
                     <label id="visitHome" class="url help" value="&iz.options.help.label;"
-                           onclick="net.yellowgorilla.imagezoom.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=options&amp;version=&iz.product.version;');"/>
+                           onclick="image.zoom.ugly.attempt.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=options');"/>
                 </hbox>
                 <groupbox id="container" orient="horizontal" flex="1">
                     <caption label="&iz.options.contextdisplay.label;"/>
