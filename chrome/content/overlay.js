@@ -22,14 +22,11 @@
 
 
 // Initialize the global namespace for image zoom
-if (!image) var image = {};
-if (!image.zoom) image.zoom = {};
-if (!image.zoom.ugly) image.zoom.ugly = {};
-if (!image.zoom.ugly.attempt) image.zoom.ugly.attempt = {};
+if (!imagezoomuglyattempt) var imagezoomuglyattempt = {};
 
-image.zoom.ugly.attempt.overlay = new ImageZoomOverlay();
+imagezoomuglyattempt.overlay = new ImageZoomOverlay();
 
-window.addEventListener("load", image.zoom.ugly.attempt.overlay.initImageZoom, false);
+window.addEventListener("load", imagezoomuglyattempt.overlay.initImageZoom, false);
 
 // Image Zoom overlay Object Definition
 function ImageZoomOverlay() {
@@ -61,21 +58,21 @@ function ImageZoomOverlay() {
     // Add events for the mouse functions
     gPanelContainer().addEventListener("mousedown", izOnMouseDown, true);
 
-    imagezoomBundle = document.getElementById("image.zoom.ugly.attempt.stringbundle");
+    imagezoomBundle = document.getElementById("imagezoomuglyattempt.stringbundle");
 
   };
 
   this.izShowCustomZoom = function () {
     // Create the image object and pass it to the custom zoom dialog
     var oizImage = new IzImage(document.popupNode);
-    openDialog("chrome://image.zoom.ugly.attempt/content/customzoom.xul", "", "chrome,modal,centerscreen", "Image", oizImage);
+    openDialog("chrome://imagezoomuglyattempt/content/customzoom.xul", "", "chrome,modal,centerscreen", "Image", oizImage);
     reportStatus(oizImage);
   };
 
   this.izShowCustomDim = function () {
     // Create the image object and pass it to the custom dimension dialog
     var oizImage = new IzImage(document.popupNode);
-    openDialog("chrome://image.zoom.ugly.attempt/content/customdim.xul", "", "chrome,modal,centerscreen", oizImage);
+    openDialog("chrome://imagezoomuglyattempt/content/customdim.xul", "", "chrome,modal,centerscreen", oizImage);
     reportStatus(oizImage);
   };
 

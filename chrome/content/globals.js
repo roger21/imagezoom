@@ -20,12 +20,9 @@
 
  * ***** END LICENSE BLOCK ***** */
 
-if (!image) var image = {};
-if (!image.zoom) image.zoom = {};
-if (!image.zoom.ugly) image.zoom.ugly = {};
-if (!image.zoom.ugly.attempt) image.zoom.ugly.attempt = {};
+if (!imagezoomuglyattempt) var imagezoomuglyattempt = {};
 
-image.zoom.ugly.attempt.globals = new ImageZoomGlobals();
+imagezoomuglyattempt.globals = new ImageZoomGlobals();
 
 function ImageZoomGlobals() {
 

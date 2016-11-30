@@ -22,10 +22,10 @@
 ***** END LICENSE BLOCK ***** -->
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://image.zoom.ugly.attempt/skin/imagezoom.css" type="text/css"?>
+<?xml-stylesheet href="chrome://imagezoomuglyattempt/skin/imagezoom.css" type="text/css"?>
 
 <!DOCTYPE window [
-        <!ENTITY % imagezoomDTD SYSTEM "chrome://image.zoom.ugly.attempt/locale/imageZoom.dtd" >
+        <!ENTITY % imagezoomDTD SYSTEM "chrome://imagezoomuglyattempt/locale/imageZoom.dtd" >
         %imagezoomDTD;
         <!ENTITY % systemaboutDTD SYSTEM "chrome://mozapps/locale/extensions/about.dtd" >
         %systemaboutDTD;
@@ -35,15 +35,15 @@
         title="&iz.product.name; &iz.product.version;"
         orient="vertical"
         autostretch="always"
-        onload="image.zoom.ugly.attempt.globals.initAbout()"
+        onload="imagezoomuglyattempt.globals.initAbout()"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <script type="application/x-javascript" src="chrome://image.zoom.ugly.attempt/content/globals.js"/>
+    <script type="application/x-javascript" src="chrome://imagezoomuglyattempt/content/globals.js"/>
 
     <groupbox align="start" orient="horizontal" class="about-box">
         <vbox>
             <text value="&iz.product.name;" class="main-title"
-                  onclick="image.zoom.ugly.attempt.globals.openURL('http://imagezoom.yellowgorilla.net/?source=about');"/>
+                  onclick="imagezoomuglyattempt.globals.openURL('http://imagezoom.yellowgorilla.net/?source=about');"/>
             <text id="versionLabel" value="&iz.about.version.label;" class="version"/>
 
             <hbox>
@@ -56,17 +56,17 @@
 
             <separator class="thin"/>
             <text value="&iz.about.help.label;" class="url"
-                  onclick="image.zoom.ugly.attempt.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=about');"/>
+                  onclick="imagezoomuglyattempt.globals.openURL('http://imagezoom.yellowgorilla.net/help/?source=about');"/>
             <text value="&iz.about.help.description;"/>
 
             <separator class="thin"/>
             <text value="&iz.about.walkthrough.label;" class="url"
-                  onclick="image.zoom.ugly.attempt.globals.openURL('http://imagezoom.yellowgorilla.net/install/?source=about');"/>
+                  onclick="imagezoomuglyattempt.globals.openURL('http://imagezoom.yellowgorilla.net/install/?source=about');"/>
             <text value="&iz.about.walkthrough.description;"/>
 
         </vbox>
         <spring flex="1"/>
-        <image src="chrome://image.zoom.ugly.attempt/skin/imagezoom.png"/>
+        <image src="chrome://imagezoomuglyattempt/skin/imagezoom.png"/>
     </groupbox>
 
     <hbox>
