@@ -5,6 +5,6 @@ Image Zoom (ugly fixes)
 
 https://addons.mozilla.org/en-US/firefox/addon/image-zoom-ugly-attempt/
 
-### Update june 2020
+### Update June 2020
 
 You might want to have a look at https://github.com/roger21/image-zoom
